@@ -18,3 +18,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_a_guest(self):
         self.assertEqual("John Travolta", self.example_room_1.guest.name)
+
+    def test_room_has_a_song(self):
+        self.assertEqual("Saturday Night Fever", self.example_room_1.song.title)
