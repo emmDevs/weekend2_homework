@@ -9,7 +9,9 @@ class Room:
         self.playlist = playlist
 
     def check_guest_into_room(self, guest):
-        self.checked_in_list.append(guest.name)
+        if len(self.checked_in_list) < self.capacity:
+            self.checked_in_list.append(guest.name)
+        return "Sorry, maximum occupancy reached"
 
     def check_guest_out_of_room(self, guest):
         if guest.name in self.checked_in_list:
