@@ -21,3 +21,6 @@ class TestVenue(unittest.TestCase):
 
     def test_venue_has_name(self):
         self.assertEqual("Codeclan Caraoke", self.example_venue.name)
+
+    def test_venue_has_till(self):
+        self.assertEqual(500, self.example_venue.till)
