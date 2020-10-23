@@ -10,4 +10,7 @@ class TestSong(unittest.TestCase):
         self.assertEqual("Saturday Night Fever", self.example_song_1.title) 
 
     def test_song_has_an_artist(self):
-        self.assertEqual("The Bee Gees", self.example_song_1.artist)  
+        self.assertEqual("The Bee Gees", self.example_song_1.artist) 
+        
+    def test_song_has_a_length(self):
+        self.assertEqual(3.22, self.example_song_1.length)
