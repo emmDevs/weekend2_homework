@@ -5,3 +5,6 @@ class Guest:
         self.age = age
         self.wallet = wallet
         self.favourite_song = favourite_song
+
+    # def check_into_room(self):
+    #     room.guest_list.append(self.name)

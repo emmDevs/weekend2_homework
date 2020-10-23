@@ -21,3 +21,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_a_song(self):
         self.assertEqual("Saturday Night Fever", self.example_room_1.song.title)
+
+    def test_room_has_a_guest_list(self):
+        self.assertEqual([], self.example_room_1.guest_list)
