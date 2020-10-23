@@ -5,3 +5,4 @@ class Room:
         self.capacity = capacity
         self.guest = guest
         self.song = song
+        self.guest_list = []

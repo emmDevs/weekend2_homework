@@ -16,3 +16,6 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_has_favourite_song(self):
         self.assertEqual("Saturday Night Fever", self.example_guest_1.favourite_song)
+
+    # def test_guest_can_check_into_room(self, room):
+    #     result = 
