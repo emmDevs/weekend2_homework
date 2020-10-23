@@ -12,3 +12,6 @@ class TestRoom(unittest.TestCase):
 
     def test_room_has_name(self):
         self.assertEqual("stars in your eyes", self.example_room_1.name)
+
+    def test_room_has_a_capacity(self):
+        self.assertEqual(5, self.example_room_1.capacity)
