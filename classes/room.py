@@ -14,3 +14,6 @@ class Room:
     def check_guest_out_of_room(self, guest):
         if guest.name in self.checked_in_list:
             self.checked_in_list.remove(guest.name)
+
+    def add_song_to_room(self, song):
+        self.playlist.append(song.title)
