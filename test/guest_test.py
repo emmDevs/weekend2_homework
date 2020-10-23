@@ -7,7 +7,7 @@ class TestGuest(unittest.TestCase):
     def setUp(self):
         self.example_guest_1 = Guest("John Travolta", 34, 50, "Saturday Night Fever")
         self.example_song_1 = Song("Saturday Night Fever", "The Bee Gees", 3.22)
-        self.example_room_1 = Room("stars in your eyes", 5, self.example_guest_1, self.example_song_1, [])
+        self.example_room_1 = Room("stars in your eyes", 5, self.example_guest_1, self.example_song_1, [], [])
 
     def test_guest_has_name(self):
         self.assertEqual("John Travolta", self.example_guest_1.name)
