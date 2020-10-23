@@ -24,3 +24,6 @@ class TestVenue(unittest.TestCase):
 
     def test_venue_has_till(self):
         self.assertEqual(500, self.example_venue.till)
+
+    def test_venue_has_guest(self):
+        self.assertEqual("John Travolta", self.example_venue.guest.name)
