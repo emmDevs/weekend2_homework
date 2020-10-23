@@ -27,3 +27,6 @@ class TestVenue(unittest.TestCase):
 
     def test_venue_has_guest(self):
         self.assertEqual("John Travolta", self.example_venue.guest.name)
+
+    def test_venue_has_a_room(self):
+        self.assertEqual("stars in your eyes", self.example_venue.room.name)
