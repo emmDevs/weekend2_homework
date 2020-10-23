@@ -7,3 +7,6 @@ class TestGuest(unittest.TestCase):
 
     def test_guest_has_name(self):
         self.assertEqual("John Travolta", self.example_guest_1.name)
+
+    def test_guest_has_age(self):
+        self.assertEqual(34, self.example_guest_1.age)
