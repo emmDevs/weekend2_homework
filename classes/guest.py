@@ -7,6 +7,8 @@ class Guest:
         self.favourite_song = favourite_song
 
     def pay_entry_fee(self, entry_fee):
-        self.wallet -= entry_fee
+        if self.wallet >= entry_fee:
+            self.wallet -= entry_fee
+        return "Sorry, you don't have enough money"
 
 

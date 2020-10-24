@@ -11,7 +11,7 @@ class TestGuest(unittest.TestCase):
         self.example_guest_3 = Guest("Bob Dylan", 20, 35, "Blowin in the wind")
         self.example_guest_4 = Guest("Tom Jones", 26, 80, "It's not unusual")
         self.example_guest_5 = Guest("Dizzee Rascal", 31, 200, "Bonkers")
-        self.example_guest_6 = Guest("Beyonce", 19, 40, "If I were a boy")
+        self.example_guest_6 = Guest("Beyonce", 19, 4, "If I were a boy")
         self.example_song_1 = Song("Saturday Night Fever", "The Bee Gees", 3.22)
         self.example_room_1 = Room("stars in your eyes", 5, self.example_guest_1, self.example_song_1, [], [])
 
@@ -31,3 +31,14 @@ class TestGuest(unittest.TestCase):
         entry_fee = 5
         self.example_guest_1.pay_entry_fee(entry_fee)
         self.assertEqual(45, self.example_guest_1.wallet)
+
+    def test_guest_can_pay_entry_fee__has_enough_money(self):
+        entry_fee = 5
+        self.example_guest_2.pay_entry_fee(entry_fee)
+        self.assertEqual(55, self.example_guest_2.wallet)
+
+    def test_guest_can_pay_entry_fee__does_not_have_enough_money(self):
+        entry_fee = 5
+        self.example_guest_6.pay_entry_fee(entry_fee)
+        self.assertEqual("Sorry, you don't have enough money", self.example_guest_6.pay_entry_fee(entry_fee))
+
