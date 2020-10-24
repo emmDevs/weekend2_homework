@@ -27,6 +27,7 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_favourite_song(self):
         self.assertEqual("Saturday Night Fever", self.example_guest_1.favourite_song)
 
-    # def test_guest_can_check_into_room(self):
-    # #     result = guest list length will be 1
-    #     self.assertEqual(1, len(self.example_room_1.guest_list))
+    def test_guest_can_pay_entry_fee(self):
+        entry_fee = 5
+        self.example_guest_1.pay_entry_fee(entry_fee)
+        self.assertEqual(45, self.example_guest_1.wallet)

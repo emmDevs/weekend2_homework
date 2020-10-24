@@ -6,4 +6,7 @@ class Guest:
         self.wallet = wallet
         self.favourite_song = favourite_song
 
+    def pay_entry_fee(self, entry_fee):
+        self.wallet -= entry_fee
+
 
