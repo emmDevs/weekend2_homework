@@ -30,3 +30,8 @@ class TestVenue(unittest.TestCase):
 
     def test_venue_has_a_room(self):
         self.assertEqual("stars in your eyes", self.example_venue.room.name)
+
+    def test_take_money_from_guest(self):
+        entry_fee = 5
+        self.example_venue.charge_entry_fee(entry_fee)
+        self.assertEqual(505, self.example_venue.till)
