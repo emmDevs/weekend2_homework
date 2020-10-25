@@ -24,3 +24,4 @@ class Room:
         for item in self.playlist:
             if guest.favourite_song == item["title"]:
                 return "Yay! They have my favourite song!"
+            return "Boo! They don't have my favourite song."

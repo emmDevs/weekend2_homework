@@ -83,3 +83,7 @@ class TestRoom(unittest.TestCase):
         self.example_room_3.check_song_on_playlist(self.guest)
         self.assertEqual("Yay! They have my favourite song!", self.example_room_3.check_song_on_playlist(self.guest))
 
+    def test_if_favourite_song_on_playlist__no(self):
+        self.example_room_3.check_song_on_playlist(self.guest_6)
+        self.assertEqual("Boo! They don't have my favourite song.", self.example_room_3.check_song_on_playlist(self.guest_6))
+
