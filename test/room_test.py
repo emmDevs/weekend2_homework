@@ -3,6 +3,7 @@ from classes.room import Room
 from classes.guest import Guest
 from classes.song import Song
 from classes.venue import Venue
+from classes.bar_tab import Bar_tab
 
 class TestRoom(unittest.TestCase):
 

@@ -3,6 +3,7 @@ from classes.venue import Venue
 from classes.room import Room
 from classes.guest import Guest
 from classes.song import Song
+from classes.bar_tab import Bar_tab
 
 class TestVenue(unittest.TestCase):
 
@@ -17,7 +18,21 @@ class TestVenue(unittest.TestCase):
         self.example_room_1 = Room("stars in your eyes", 5, self.guest, self.song, [], [])
         self.example_room_2 = Room("Britains Got Talent", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper"], [])
         self.example_room_3 = Room("The Voice", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper", "Dizzee Rascal", "Beyonce"], [])
-        self.example_venue = Venue("Codeclan Caraoke", 500, self.guest, self.example_room_1)
+        self.bar_tab = Bar_tab(self.example_room_3, 5, "entry fee", self.guest)
+        self.example_venue = Venue("Codeclan Caraoke", 500, self.guest, self.example_room_1,[{
+            "room": "stars in your eyes",
+            "amount": 5,
+            "description": "entry fee",
+            "guest": "John Travolta"
+        },
+        {
+            "room": "stars in your eyes",
+            "amount": 7.50,
+            "description": "White Wine",
+            "guest": "John Travolta" 
+        }
+        ])
+        
 
     def test_venue_has_name(self):
         self.assertEqual("Codeclan Caraoke", self.example_venue.name)
@@ -35,3 +50,6 @@ class TestVenue(unittest.TestCase):
         entry_fee = 5
         self.example_venue.charge_entry_fee(entry_fee)
         self.assertEqual(505, self.example_venue.till)
+
+    def test_venue_has_a_bar_tab(self):
+        self.assertEqual(2, len(self.example_venue.bar_tab))
