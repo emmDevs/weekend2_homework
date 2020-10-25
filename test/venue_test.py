@@ -32,6 +32,42 @@ class TestVenue(unittest.TestCase):
             "guest": "John Travolta" 
         }
         ])
+        self.example_venue_2 = Venue("Codeclan Caraoke", 500, self.guest, self.example_room_1,[{
+            "room": "stars in your eyes",
+            "amount": 5,
+            "description": "entry fee",
+            "guest": "John Travolta",
+        },
+        {
+            "room": "stars in your eyes",
+            "amount": 7.50,
+            "description": "White Wine",
+            "guest": "John Travolta", 
+        },
+        {   "room": "Britains Got Talent",
+            "amount": 5,
+            "description": "entry fee",
+            "guest": "Cyndi Lauper",
+        },
+        {
+            "room": "The Voice",
+            "amount": 5,
+            "description": "entry fee",
+            "guest": "Tom Jones",
+        },
+        {
+            "room": "Britains Got Talent",
+            "amount": 5,
+            "description": "entry fee",
+            "guest": "Beyonce",
+        },
+        {
+            "room": "The Voice",
+            "amount": 5,
+            "description": "entry fee",
+            "guest": "Dizzee Rascal",
+        }
+        ])
         
 
     def test_venue_has_name(self):
@@ -61,3 +97,7 @@ class TestVenue(unittest.TestCase):
     def test_venue_can_add_total_bill_for_room(self):
         self.example_venue.get_total_bill_for_room(self.example_room_1)
         self.assertEqual(12.50, self.example_venue.get_total_bill_for_room(self.example_room_1))
+
+    def test_venue_can_add_total_bill_for_customer(self):
+        self.example_venue_2.get_total_bill_for_customer(self.guest_4)
+        self.assertEqual(5, self.example_venue_2.get_total_bill_for_customer(self.guest_4))

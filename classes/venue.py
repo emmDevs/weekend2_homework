@@ -20,3 +20,10 @@ class Venue:
                 total_bill += item["amount"]
         return total_bill
 
+    def get_total_bill_for_customer(self, guest):
+        total_bill = 0
+        for item in self.bar_tab:
+            if item["guest"] == guest.name:
+                total_bill += item["amount"]
+        return total_bill
+
