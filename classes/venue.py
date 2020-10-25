@@ -13,3 +13,10 @@ class Venue:
     def add_item_to_bar_tab(self, bar_tab):
         self.bar_tab.append(bar_tab)
 
+    def get_total_bill_for_room(self, room):
+        total_bill = 0
+        for item in self.bar_tab:
+            if item["room"] == room.name:
+                total_bill += item["amount"]
+        return total_bill
+

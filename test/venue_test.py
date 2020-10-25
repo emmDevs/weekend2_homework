@@ -57,3 +57,7 @@ class TestVenue(unittest.TestCase):
     def test_venue_can_add_item_to_bar_tab(self):
         self.example_venue.add_item_to_bar_tab(self.bar_tab)
         self.assertEqual(3, len(self.example_venue.bar_tab))
+
+    def test_venue_can_add_total_bill_for_room(self):
+        self.example_venue.get_total_bill_for_room(self.example_room_1)
+        self.assertEqual(12.50, self.example_venue.get_total_bill_for_room(self.example_room_1))
