@@ -14,9 +14,29 @@ class TestRoom(unittest.TestCase):
         self.guest_5 = Guest("Dizzee Rascal", 31, 200, "Bonkers")
         self.guest_6 = Guest("Beyonce", 19, 40, "If I were a boy")
         self.song = Song("Saturday Night Fever", "The Bee Gees", 3.22)
+        self.song_2 = Song("Girls just wanna have fun", "Cyndi Lauper", 2.58)
+        self.song_3 = Song("Blowin in the wind", "Bob Dylan", 4.15)
+        self.song_4 = Song("It's not unusual", "Tom Jones", 3.42)
+        self.song_5 = Song("Bonkers", "Dizzee Rascal", 3.12)
+        self.song_6 = Song("If I were a boy", "Beyonce", 4.11)
         self.example_room_1 = Room("stars in your eyes", 5, self.guest, self.song, [], [])
         self.example_room_2 = Room("Britains Got Talent", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper"], [])
-        self.example_room_3 = Room("The Voice", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper", "Dizzee Rascal", "Beyonce"], [])
+        self.example_room_3 = Room("The Voice", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper", "Dizzee Rascal", "Beyonce"], [{
+            "title": "Saturday Night Fever",
+            "Artist": "The Bee Gees",
+            "length": 3.22,
+        },
+        {
+            "title": "Girls just wanna have fun",
+            "Artist": "Cyndi Lauper",
+            "length": 2.58,
+        },
+        {
+            "title": "Blowin in the wind",
+            "Artist": "Bob Dylan",
+            "length": 4.15
+        }
+        ])
 
     def test_room_has_name(self):
         self.assertEqual("stars in your eyes", self.example_room_1.name)
@@ -55,4 +75,11 @@ class TestRoom(unittest.TestCase):
     def test_guest_can_check_into_room__too_many_people(self):
         self.example_room_3.check_guest_into_room(self.guest_4)
         self.assertEqual("Sorry, maximum occupancy reached", self.example_room_3.check_guest_into_room(self.guest_4))
+
+    def test_room_has_playlist__room_3_added_playlist(self):
+        self.assertEqual(3, len(self.example_room_3.playlist))
+
+    def test_if_favourite_song_on_playlist__yes(self):
+        self.example_room_3.check_song_on_playlist(self.guest)
+        self.assertEqual("Yay! They have my favourite song!", self.example_room_3.check_song_on_playlist(self.guest))
 

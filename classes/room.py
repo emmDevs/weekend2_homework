@@ -19,3 +19,8 @@ class Room:
 
     def add_song_to_room(self, song):
         self.playlist.append(song.title)
+
+    def check_song_on_playlist(self, guest):
+        for item in self.playlist:
+            if guest.favourite_song == item["title"]:
+                return "Yay! They have my favourite song!"
