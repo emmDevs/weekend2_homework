@@ -9,3 +9,7 @@ class Venue:
 
     def charge_entry_fee(self, entry_fee):
         self.till += entry_fee
+
+    def add_item_to_bar_tab(self, bar_tab):
+        self.bar_tab.append(bar_tab)
+

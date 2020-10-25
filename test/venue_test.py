@@ -18,7 +18,7 @@ class TestVenue(unittest.TestCase):
         self.example_room_1 = Room("stars in your eyes", 5, self.guest, self.song, [], [])
         self.example_room_2 = Room("Britains Got Talent", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper"], [])
         self.example_room_3 = Room("The Voice", 4, self.guest, self.song, ["John Travolta", "Cyndi Lauper", "Dizzee Rascal", "Beyonce"], [])
-        self.bar_tab = Bar_tab(self.example_room_3, 5, "entry fee", self.guest)
+        self.bar_tab = Bar_tab(self.example_room_3.name, 5, "entry fee", self.guest_6.name)
         self.example_venue = Venue("Codeclan Caraoke", 500, self.guest, self.example_room_1,[{
             "room": "stars in your eyes",
             "amount": 5,
@@ -53,3 +53,7 @@ class TestVenue(unittest.TestCase):
 
     def test_venue_has_a_bar_tab(self):
         self.assertEqual(2, len(self.example_venue.bar_tab))
+
+    def test_venue_can_add_item_to_bar_tab(self):
+        self.example_venue.add_item_to_bar_tab(self.bar_tab)
+        self.assertEqual(3, len(self.example_venue.bar_tab))
